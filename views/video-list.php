@@ -1,15 +1,6 @@
 <?php
-use PDO;
-use Alura\Mvc\Repository\VideoRepository;
-
-$dbPath = __DIR__ . '/banco.sqlite';
-$pdo = new PDO("sqlite:$dbPath");
-
-$repository = new VideoRepository($pdo);
-$videoList = $repository->all();
-
+require_once __DIR__ . '/inicio-html.php';
 ?>
-<?php require_once 'inicio-html.php'; ?>
 <ul class="videos__container">
     <?php foreach ($videoList as $video): ?>
     <li class="videos__item">
@@ -28,4 +19,5 @@ $videoList = $repository->all();
     </li>
     <?php endforeach; ?>
 </ul>
-<?php require_once 'fim-html.php'; ?>
+<?php
+require_once __DIR__ . '/fim-html.php';
